@@ -12,7 +12,15 @@ let cardsEl = document.getElementById("cards-el");
 
 function getRandomCard() {
     let randomNumber = Math.floor(Math.random() * 13) + 1;
-    return randomNumber;
+    if (randomNumber === 1) { // ace(1) has value 11
+        return 11;
+    }
+    else if (randomNumber > 10) {  // J,Q,K has value 10
+        return 10;
+    }
+    else{
+        return randomNumber;
+    }
 }
 
 function startGame() {
